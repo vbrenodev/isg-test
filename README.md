@@ -7,22 +7,22 @@
       * [ ] Tests
     * [x] Registrations
       * [ ] Tests
-  * [ ] Post
-    * [ ] Create
+  * [x] Post
+    * [x] Create
       * [ ] Tests
-    * [ ] Read
+    * [x] Read
       * [ ] Tests
-    * [ ] Update
+    * [x] Update
       * [ ] Tests
-    * [ ] Delete
+    * [x] Delete
       * [ ] Tests
-  * [ ] Comment
-    * [ ] Create
+  * [x] Comment
+    * [x] Create
       * [ ] Tests
-    * [ ] Read
+    * [x] Read
       * [ ] Tests
-    * [ ] Update
+    * [x] Update
       * [ ] Tests
-    * [ ] Delete
+    * [x] Delete
       * [ ] Tests
 <!--te-->
