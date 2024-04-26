@@ -2,10 +2,10 @@
 
 # Features
 <!--ts-->
-  * [ ] User
-    * [ ] Login
+  * [x] User
+    * [x] Login
       * [ ] Tests
-    * [ ] Registrations
+    * [x] Registrations
       * [ ] Tests
   * [ ] Post
     * [ ] Create
