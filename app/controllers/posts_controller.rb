@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show update destroy]
 
   def index
-    @posts = current_user.posts
+    @posts = current_user.posts.where(deleted_at: nil)
   end
 
   def show; end
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find_by(id: params[:id])
+    @post = Post.find_by(id: params[:id], deleted_at: nil)
   end
 
   def permitted_params
