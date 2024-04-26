@@ -5,17 +5,16 @@ class CommentsController < ApplicationController
   # I will leave it without authentication, but it could also be linked to the user
   # before_action :authenticate_user!
 
-  before_action :set_post, only: %i[index show create update destroy]
   before_action :set_comment, only: %i[show update destroy]
 
   def index
-    @comments = @post.comments.where(deleted_at: nil)
+    @comments = Comments.where(comment_params[:post_id])
   end
 
   def show; end
 
   def create
-    @comment = @post.comments.build(permitted_params)
+    @comment = Comments.new(comment_params)
 
     return error_response('Comment failed to be created.', @comment.errors.full_messages) unless @comment.save
 
@@ -23,7 +22,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    unless @comment.update(permitted_params)
+    unless @comment.update(comment_update_params)
       return error_response('Comment failed to be updated.', @comment.errors.full_messages)
     end
 
@@ -40,15 +39,15 @@ class CommentsController < ApplicationController
 
   private
 
-  def set_post
-    @post = Post.find(params[:post_id], deleted_at: nil)
-  end
-
   def set_comment
-    @comment = Comment.find(params[:id], deleted_at: nil)
+    @comment = Comment.find(params[:id])
   end
 
-  def permitted_params
+  def comment_params
+    params.require(:comment).permit(:name, :text, :post_id)
+  end
+
+  def comment_update_params
     params.require(:comment).permit(:name, :text)
   end
 

@@ -5,13 +5,13 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show update destroy]
 
   def index
-    @posts = current_user.posts.where(deleted_at: nil)
+    @posts = Post.where(user_id: post_params.user_id)
   end
 
   def show; end
 
   def create
-    @post = current_user.posts.build(permitted_params)
+    @post = Post.new(post_params)
 
     return error_response('Post failed to be created.', @post.errors.full_messages) unless @post.save
 
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    unless @post.update(permitted_params)
+    unless @post.update(post_update_params)
       return error_response('Post failed to be updated.', @post.errors.full_messages)
     end
 
@@ -27,9 +27,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    unless @post.update(deleted_at: Time.zone.now)
-      return error_response('Post failed to be deleted.', @post.errors.full_messages)
-    end
+    return error_response('Post failed to be deleted.', @post.errors.full_messages) unless @post.destroy
 
     @message = 'Post has been successfully deleted.'
   end
@@ -37,10 +35,14 @@ class PostsController < ApplicationController
   private
 
   def set_post
-    @post = Post.find_by(id: params[:id], deleted_at: nil)
+    @post = Post.find_by(id: params[:id])
   end
 
-  def permitted_params
+  def post_params
+    params.require(:post).permit(:title, :text, :user_id)
+  end
+
+  def post_update_params
     params.require(:post).permit(:title, :text)
   end
 
