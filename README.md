@@ -8,7 +8,7 @@ Este projeto foi realizado utilizando Ruby `3.3.0` com Rails `7.1.3.2`. Utilizei
 
 Primeiro vamos realizar as instalações, 
 ### Instalação `asdf`
-> :warning: **AVISO:** Não é necessário para rodar o projeto, pode utilizar os gerenciadores de preferência, se não utilizar o `asdf` desconsidere, se já tiver com as dependências do Ruby `3.3.0` e Rails `7.1.3.2` vá para [Iniciando projeto](#iniciando-projeto)
+> :warning: **AVISO:** Se não utilizar o `asdf` desconsidere, se já tiver com as dependências do Ruby `3.3.0` e Rails `7.1.3.2` vá para [Iniciando projeto](#iniciando-projeto)
 
 1. Atualize os pacotes do seu sistema:
 ```sudo apt update```
