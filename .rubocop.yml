@@ -1,8 +1,11 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-factory_bot
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+
 AllCops:
   TargetRubyVersion: 3.3.0
   NewCops: enable
-  Exclude:
-    - 'bin/bundle'
-    - 'db/schema.rb'
-Style/Documentation:
-  Enabled: false

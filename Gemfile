@@ -44,10 +44,20 @@ gem 'rack-cors'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'byebug'
+
+  gem 'database_cleaner-active_record'
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'faker', '~> 1.6', '>= 1.6.6'
+  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
+  gem 'shoulda-matchers', '~> 6.0'
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
   gem 'rubocop', require: false
+  gem 'rubocop-factory_bot', require: false
+  gem 'rubocop-performance', '~> 1.20', '>= 1.20.2', require: false
+  gem 'rubocop-rails', '~> 2.23', '>= 2.23.1', require: false
+  gem 'rubocop-rspec', '~> 2.26', '>= 2.26.1', require: false
 end
