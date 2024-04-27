@@ -66,24 +66,20 @@ RSpec.describe Users::RegistrationsController do
   end
 
   describe 'PUT #update' do
+    before { sign_in user }
+
     context 'when update is successful' do
       it 'returns a success response' do
-        sign_in user
-
         put :update, params: { user: { name: Faker::Name.name, current_password: 'password' }, format: :json }
         expect(response).to have_http_status(:ok)
       end
 
       it 'renders the update template' do
-        sign_in user
-
         put :update, params: { user: { name: Faker::Name.name, current_password: 'password' }, format: :json }
         expect(response).to render_template('users/registrations/update')
       end
 
       it 'sets the success message' do
-        sign_in user
-
         put :update, params: { user: { name: Faker::Name.name, current_password: 'password' }, format: :json }
         expect(assigns(:message)).to eq('User has been successfully updated.')
       end
@@ -91,22 +87,16 @@ RSpec.describe Users::RegistrationsController do
 
     context 'when current password is missing' do
       it 'returns an error response' do
-        sign_in user
-
         put :update, params: { user: { name: Faker::Name.name, current_password: '' }, format: :json }
         expect(response).to have_http_status(:unprocessable_entity)
       end
 
       it 'renders the error template' do
-        sign_in user
-
         put :update, params: { user: { name: Faker::Name.name, current_password: '' }, format: :json }
         expect(response).to render_template('shared/error')
       end
 
       it 'sets the error message and details' do
-        sign_in user
-
         put :update, params: { user: { name: Faker::Name.name, current_password: '' }, format: :json }
         expect(assigns(:error)).to eq({ message: 'Signed up failed.', details: ['Current password can\'t be blank'] })
       end
@@ -114,24 +104,20 @@ RSpec.describe Users::RegistrationsController do
   end
 
   describe 'DELETE #destroy' do
+    before { sign_in user }
+
     context 'when user is deleted' do
       it 'returns a success response' do
-        sign_in user
-
         delete :destroy, format: :json
         expect(response).to have_http_status(:ok)
       end
 
       it 'renders the destroy template' do
-        sign_in user
-
         delete :destroy, format: :json
         expect(response).to render_template('users/registrations/destroy')
       end
 
       it 'sets the success message' do
-        sign_in user
-
         delete :destroy, format: :json
         expect(assigns(:message)).to eq('User has been successfully deleted.')
       end
