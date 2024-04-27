@@ -3,6 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe User do
+  let(:user) { build(:user) }
+
   describe 'associations' do
     it { is_expected.to have_many(:posts).dependent(:destroy) }
   end
@@ -18,27 +20,28 @@ RSpec.describe User do
 
   describe 'scopes' do
     it 'has a default scope that excludes deleted users' do
-      user = build(:user)
       user.destroy
       expect(described_class.all).not_to include(user)
     end
   end
 
   describe 'methods' do
-    let(:user) { build(:user) }
-
-    it 'sets deleted_at attribute when destroy is called' do
-      user.destroy
-      expect(user.deleted_at).to be_present
+    describe '#destroy' do
+      it 'sets deleted_at attribute when destroy is called' do
+        user.destroy
+        expect(user.deleted_at).to be_present
+      end
     end
 
-    it 'returns true if user is deleted' do
-      user.destroy
-      expect(user.deleted?).to be true
-    end
+    describe '#deleted?' do
+      it 'returns true if user is deleted' do
+        user.destroy
+        expect(user.deleted?).to be true
+      end
 
-    it 'returns false if user is not deleted' do
-      expect(user.deleted?).to be false
+      it 'returns false if user is not deleted' do
+        expect(user.deleted?).to be false
+      end
     end
   end
 end
