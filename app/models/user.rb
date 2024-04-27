@@ -9,9 +9,9 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }
-  validates :password, length: { minimum: 6 }, on: %i[create update]
-  validates :password_confirmation, length: { minimum: 6 }, on: %i[create update]
-  validates :password, confirmation: { on: %i[create update] }
+  validates :password, length: { minimum: 6 }, on: %i[create]
+  validates :password_confirmation, length: { minimum: 6 }, on: %i[create]
+  validates :password, confirmation: { on: %i[create] }
 
   default_scope -> { where(deleted_at: nil) }
 
