@@ -33,6 +33,15 @@ Primeiro vamos realizar as instalações,
    Você deve ver `Rails 7.1.3.2`
 
 ### Iniciando projeto
+1. Clonando o repositório: `git clone git@github.com:vbrenodev/isg-test.git`
+2. Instale as dependências com o `bundle install` ou `bundle` apenas.
+3. Gere uma secret key para a variável de ambiente `JWT_SECRET_KEY`: `rails secret`
+4. Defina nas variáveis de ambiente utilizando `.env`, disponibilizei um `.env.example`
+5. Agora é ser feliz utilizando `rails s`
+
+### Executar tests
+Após realizar todas as configurações e iniciar uma vez o projeto utilize para os testes
+`bundle exec rspec`
 
 
 # Features
@@ -61,5 +70,5 @@ Primeiro vamos realizar as instalações,
     * [x] Delete
       * [x] Tests
 
-  * [ ] Readme Doc
+  * [x] Readme Doc
 <!--te-->
