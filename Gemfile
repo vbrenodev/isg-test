@@ -43,9 +43,9 @@ gem 'rack-cors', '~> 2.0', '>= 2.0.2'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'byebug'
-
+  gem 'byebug', '~> 11.1', '>= 11.1.3'
   gem 'database_cleaner-active_record', '~> 2.1'
+  gem 'dotenv-rails', '~> 3.1'
   gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
   gem 'faker', '~> 3.3.1'
   gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
