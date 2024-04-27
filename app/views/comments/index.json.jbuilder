@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-json.post_id @post.id
-
 json.comments do
   json.array! @comments do |comment|
     json.id comment.id
