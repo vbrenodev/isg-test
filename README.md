@@ -4,25 +4,25 @@
 <!--ts-->
   * [x] User
     * [x] Login
-      * [ ] Tests
+      * [x] Tests
     * [x] Registrations
-      * [ ] Tests
+      * [x] Tests
   * [x] Post
     * [x] Create
-      * [ ] Tests
+      * [x] Tests
     * [x] Read
-      * [ ] Tests
+      * [x] Tests
     * [x] Update
-      * [ ] Tests
+      * [x] Tests
     * [x] Delete
-      * [ ] Tests
+      * [x] Tests
   * [x] Comment
     * [x] Create
-      * [ ] Tests
+      * [x] Tests
     * [x] Read
-      * [ ] Tests
+      * [x] Tests
     * [x] Update
-      * [ ] Tests
+      * [x] Tests
     * [x] Delete
-      * [ ] Tests
+      * [x] Tests
 <!--te-->
