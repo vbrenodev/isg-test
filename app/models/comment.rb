@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Comment < ApplicationRecord
-  belongs_to :post
+  belongs_to :post, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :text, presence: true, length: { maximum: 1_000 }
