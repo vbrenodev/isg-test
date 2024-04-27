@@ -13,3 +13,6 @@ Rails/LexicallyScopedActionFilter:
   Enabled: false
   Include:
     - 'app/controllers/sessions_controller.rb'
+
+RSpec/NestedGroups:
+  Max: 4
