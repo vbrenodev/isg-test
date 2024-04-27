@@ -4,6 +4,15 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: %i[show update destroy]
 
+  rescue_from ActionController::ParameterMissing do |exception|
+    @error = {
+      message: "The required parameter #{exception.param} is missing.",
+      details: exception.message
+    }
+
+    render 'shared/error', status: :unprocessable_entity
+  end
+
   def index
     @posts = Post.where(user_id: current_user.id)
   end
