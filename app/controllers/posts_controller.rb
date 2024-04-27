@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show update destroy]
 
   def index
-    @posts = Post.where(user_id: post_params.user_id)
+    @posts = Post.where(user_id: current_user.id)
   end
 
   def show; end
