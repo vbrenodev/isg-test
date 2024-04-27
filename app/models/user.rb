@@ -16,7 +16,7 @@ class User < ApplicationRecord
   default_scope -> { where(deleted_at: nil) }
 
   def destroy
-    update_column(deleted_at: Time.current) # rubocop:disable Rails/SkipsModelValidations
+    update_attribute(:deleted_at, Time.zone.now) # rubocop:disable Rails/SkipsModelValidations
   end
 
   def deleted?
