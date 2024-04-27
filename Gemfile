@@ -35,29 +35,29 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 # Use devise and devise-jwt for user authentication
-gem 'devise', '~> 4.9'
+gem 'devise', '~> 4.9', '>= 4.9.4'
 gem 'devise-jwt', '~> 0.11.0'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin Ajax possible
-gem 'rack-cors'
+gem 'rack-cors', '~> 2.0', '>= 2.0.2'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'byebug'
 
-  gem 'database_cleaner-active_record'
-  gem 'factory_bot_rails', '~> 6.2'
-  gem 'faker', '~> 1.6', '>= 1.6.6'
-  gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
-  gem 'shoulda-matchers', '~> 6.0'
+  gem 'database_cleaner-active_record', '~> 2.1'
+  gem 'factory_bot_rails', '~> 6.4', '>= 6.4.3'
+  gem 'faker', '~> 3.3.1'
+  gem 'rspec-rails', '~> 6.1', '>= 6.1.2'
+  gem 'shoulda-matchers', '~> 6.2'
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'rubocop', require: false
-  gem 'rubocop-factory_bot', require: false
-  gem 'rubocop-performance', '~> 1.20', '>= 1.20.2', require: false
-  gem 'rubocop-rails', '~> 2.23', '>= 2.23.1', require: false
-  gem 'rubocop-rspec', '~> 2.26', '>= 2.26.1', require: false
+  gem 'rubocop', '~> 1.63', '>= 1.63.3', require: false
+  gem 'rubocop-factory_bot', '~> 2.25', '>= 2.25.1', require: false
+  gem 'rubocop-performance', '~> 1.21', require: false
+  gem 'rubocop-rails', '~> 2.24', '>= 2.24.1', require: false
+  gem 'rubocop-rspec', '~> 2.29', '>= 2.29.1', require: false
 end
