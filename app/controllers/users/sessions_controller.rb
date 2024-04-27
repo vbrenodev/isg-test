@@ -7,7 +7,7 @@ module Users
 
     def respond_with(_resource, _opts = {})
       @message = 'You are logged in.'
-      render 'users/sessions/create', status: :ok
+      render :create, status: :ok
     end
 
     def respond_to_on_destroy
@@ -18,12 +18,12 @@ module Users
 
     def log_out_success
       @message = 'You are logged out'
-      render 'users/sessions/destroy', status: :ok
+      render :destroy, status: :ok
     end
 
     def log_out_failure
       @message = 'Hmm nothing happened.'
-      render 'users/sessions/destroy', status: :unauthorized
+      render :destroy, status: :unauthorized
     end
   end
 end

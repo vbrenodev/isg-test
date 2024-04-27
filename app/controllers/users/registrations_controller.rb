@@ -17,17 +17,17 @@ module Users
 
     def register_success
       @message = 'Signed up and logged successfully.'
-      render 'users/registrations/create', status: :ok
+      render :create, status: :ok
     end
 
     def register_updated
       @message = 'User has been successfully updated.'
-      render 'users/registrations/update', status: :ok
+      render :update, status: :ok
     end
 
     def register_deleted
       @message = 'User has been successfully deleted.'
-      render 'users/registrations/destroy', status: :ok
+      render :destroy, status: :ok
     end
 
     def error_response(message, details)
