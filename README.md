@@ -1,7 +1,7 @@
 # ISG-TEST
 
 # Objetivo
-Este projeto é uma pequena Api para criar usuários, postagens e comentários. Onde para criar as postagens é necessário ter um usuário logado, porém é livre para comentar sem um usuário.
+Este projeto é uma Api para criar usuários, postagens e comentários. Onde para criar as postagens é necessário ter um usuário logado, porém é livre para comentar sem um usuário.
 
 ## Iniciando o projeto
 Este projeto foi realizado utilizando Ruby `3.3.0` com Rails `7.1.3.2`. Utilizei o `asdf` como gerenciador de versões, particularmente gosto pois centraliza minha stack em um único lugar.
